@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h2>Tính chỉ số cân nặng</h2>
+      <p>
+        Nhập cân nặng: (kg) &nbsp;
+        <input type="number" id="a" size="20" />
+      </p>
+      <p>
+        Nhập chiều cao: (m) &nbsp;
+        <input type="number" id="b"size="20" />
+      </p>
+      <p>
+        <input type="button" onclick="bmi()" value="Kiểm tra" />
+      </p>
+      <p id="output"></p>
+    </form>
+
+    <script>
+        function bmi() {
+            let inputWeight = +document.getElementById("a").value;
+            let inputHeight = +document.getElementById("b").value;
+            let bmi = inputWeight/(inputHeight*inputHeight);
+            let result;
+
+            if (bmi < 18.5) {
+                result = "Gầy";
+            } else if (bmi < 25.0) {
+                result = "Bình thường";
+            } else if (bmi < 30.0) {
+                result = "Thừa cân";
+            } else {
+                result = "Béo phì";
+            }
+
+            document.getElementById("output").innerHTML = " Chỉ số BMI là: " + bmi +'.'+' Bạn ' + result.bold();
+        }
+        </script>
+  </body>
+</html>
