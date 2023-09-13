@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = +prompt("Nhập a:");
+      let b = +prompt("Nhập b");
+
+      function isDivided(a, b) {
+        if (a % b == 0) {
+          alert(a + " chia hết cho " + b);
+        } else {
+          alert(a + " không chia hết cho " + b);
+        }
+      }
+
+      if (b != 0) {
+        isDivided(a,b);
+      } else {
+        while (b == 0) {
+          b = +prompt("Nhập lại b: ");
+        }
+        isDivided(a,b);
+        }
+    </script>
+  </body>
+</html>

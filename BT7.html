@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .myImg {
+        width: 600px;
+        height: 200px;
+        display:block;
+        margin: auto;
+    }
+    </style>
+<body fun>
+    <img class="myImg" src="images-01/img-1.png" value="img1" onclick="fc(this);fc2()" /><br/>
+    <img class="myImg" src="images-01/img-2.png" value="img2" onclick="fc(this)"/></br/>
+    <img class="myImg" src="images-01/img-3.png" value="img3" onclick="fc(this)"/></br/>
+
+    <script>
+        let myImg1_01 = "images-01/img-1.png";
+        let myImg1_02 = "images-01/img-2.png";
+        let myImg1_03 = "images-01/img-3.png";
+
+        let myImg2_01 = "images-02/img-1.png";
+        let myImg2_02 = "images-02/img-2.png";
+        let myImg2_03 = "images-03/img-3.png";
+
+        let myImg3_01 = "images-03/img-1.png";
+        let myImg3_02 = "images-03/img-2.png";
+        let myImg3_03 = "images-03/img-3.png";
+
+        let ar1=[myImg1_01,myImg2_01,myImg3_01];
+        let ar2=[myImg1_02,myImg2_02,myImg3_02];
+        let ar3=[myImg1_03,myImg2_03,myImg3_03];
+        
+        let arr1=[myImg1_01, myImg1_02, myImg1_03];
+        let arr2=[myImg2_01, myImg2_02, myImg2_03];
+        let arr3=[myImg3_01, myImg2_02, myImg3_03];
+
+     
+
+
+        function fc(abc) {
+            let src1= abc.src.substring('http://127.0.0.1:5500/Condition-02/');
+            let value1= abc.value;
+            let x, ar;
+
+            console.log(src1);
+
+            function know(a) {
+                switch (value1) {
+                case "img1":
+                    x = ar1.indexOf(src1);
+                    ar = ar1;
+                    break;
+                case "img2":
+                    x = ar2.indexOf(src1);
+                    ar = ar2;
+                    break;
+                case "img3":
+                    x = ar3.indexOf(src1);
+                    ar = ar3;
+                    break;
+                }
+            }
+            
+            if (x==2) {
+                src1 = 'http://127.0.0.1:5500/Condition-02/' + ar[0];
+            } else {
+                src1 ='http://127.0.0.1:5500/Condition-02/' + ar[x+1];
+            }
+            }
+
+        function fc2() {
+            let myArr = document.getElementByClass("myImg").src;
+            let myArr1 = Array.from(myArr);
+            if (myArr1 == arr1 || myArr1 == arr2 || myArr1 == arr3) {
+                alert("Chúc mừng bạn");
+            }
+        }
+                    
+        
+
+        function random(a) {
+            a.value.know();
+            a.src = ar1[Math.floor(Math.random() * ar1.length)];
+            
+        }
+      
+    </script>
+</body>
+</html>

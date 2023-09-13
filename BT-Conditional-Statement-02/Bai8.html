@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let age=+prompt("Nhập tuổi: ");
+      // console.log(age);
+
+      function check(age,result) {
+
+      }
+      let result = Number.isInteger(age);
+
+      if (result == true) {
+          if ( age < 120 && age > 0) {
+              alert('Đây là tuổi của 1 người');
+          } else {
+              alert('Đây không là tuổi của 1 người');
+          }
+      } else {
+          while (result == false) {
+              age = +prompt("Nhập lại tuổi: ");
+              result = Number.isInteger(age);
+          }
+    
+          if ( age < 120 && age > 0) {
+              alert('Đây là tuổi của 1 người');
+          } else {
+              alert('Đây không là tuổi của 1 người');
+          }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // Hàm xét tuổi đủ điều kiện vào lớp 10
+      function check(age) {
+        if (age > 14) {
+          alert("Đủ điều kiện vào lớp 10");
+        } else {
+          alert("Không đủ điều kiện vào lớp 10");
+        }
+      }
+
+      //Khai báo biến tuổi
+      let age = parseInt(prompt("Nhập tuổi:"));
+
+      // Câu lệnh 
+      if (age > 0) {
+        check(age);
+      } else {
+        while (age < 0) {
+          age = parseInt(prompt("Nhập lại tuổi:"));
+        }
+        check(age);
+      }
+    </script>
+  </body>
+</html>

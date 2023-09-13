@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h2>Do you love me?</h2>
+      <button onclick="alert('Yes, you are right')">YES</button>
+      &nbsp;&nbsp;&nbsp;
+      <button onmouseover="jump()" id="noLove">NO</button>
+    </form>
+
+    <script>
+      function jump() {
+        let a = document.getElementById("noLove");
+        let b = Math.random() * window.innerWidth;
+        let c = Math.random() * window.innerHeight;
+        a.style.position = "absolute";
+        a.style.left = b + "px";
+        a.style.top = c + "px";
+      }
+    </script>
+  </body>
+</html>
